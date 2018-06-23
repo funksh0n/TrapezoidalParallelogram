@@ -8,7 +8,11 @@ bool CApp::OnInit() {
 	if((surface = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL) {
 		return false;
 	}
-	
+
+	if((test = CSurface::OnLoad("test.bmp")) == NULL) {
+		return false;
+	}
+
 	return true;
 }
 

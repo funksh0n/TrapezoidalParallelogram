@@ -2,6 +2,7 @@
 
 CApp::CApp() {
 	surface = NULL;
+	test = NULL;
 	running = true;
 }
 

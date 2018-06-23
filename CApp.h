@@ -2,11 +2,13 @@
 	#define _CAPP_H_
 
 #include <SDL/SDL.h>
+#include "CSurface.h"
 
 class CApp {
 	private:
 		bool running;
 		SDL_Surface* surface;
+		SDL_Surface* test;
 
 	public:
 		CApp();
