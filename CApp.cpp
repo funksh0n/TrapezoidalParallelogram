@@ -1,6 +1,7 @@
 #include "CApp.h"
 
 CApp::CApp() {
+	surface = NULL;
 	running = true;
 }
 

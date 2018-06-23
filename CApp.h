@@ -6,6 +6,7 @@
 class CApp {
 	private:
 		bool running;
+		SDL_Surface* surface;
 
 	public:
 		CApp();
