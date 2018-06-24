@@ -1,17 +1,16 @@
 #include "Trapezoid.h"
 
 Trapezoid::Trapezoid() {
-	//std::cout << "Trapezoid constructor... ";
-	Debug::Log();
+	Debug::Log("Trapezoid constructor... ");
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
-		std::cout << "Failed to init SDL\n";
+		Debug::Log("Failed to init SDL\n");
 		return;
 	}
 
 	window = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
 
 	if(!window) {
-		std::cout << "Failed to create window\n";
+		Debug::Log("Failed to create window\n");
 		//CheckSDLError(__LINE__);
 		return;
 	}
@@ -27,19 +26,19 @@ Trapezoid::Trapezoid() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	SDL_GL_SwapWindow(window);
 
-	std::cout << "done!\n";
+	Debug::Log("done!\n");
 }
 
 void Trapezoid::CleanUp() {
-	std::cout << "Trapezoid::CleanUp()... ";
+	Debug::Log("Trapezoid::CleanUp()... ");
 	SDL_GL_DeleteContext(context);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-	std::cout << "done!\n";
+	Debug::Log("done!\n");
 }
 
 void Trapezoid::Run() {
-	std::cout << "Trapezoid::Run()... ";
+	Debug::Log("Trapezoid::Run()... ");
 	bool run = true;
 	while(run) {
 		SDL_Event event;
@@ -56,7 +55,7 @@ void Trapezoid::Run() {
 
 		}
 	}
-	std::cout << "done!\n";
+	Debug::Log("done!\n");
 }
 
 int main(int argc, char* argv[]) {
