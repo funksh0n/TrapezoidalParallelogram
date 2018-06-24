@@ -1,5 +1,5 @@
 #ifndef _TRAPEZOID_H_
-	#define _TRAPEZOID_H_
+#define _TRAPEZOID_H_
 
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
