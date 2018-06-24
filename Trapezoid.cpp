@@ -38,13 +38,24 @@ void Trapezoid::CleanUp() {
 }
 
 void Trapezoid::Run() {
+	std::cout << "Trapezoid::Run()... ";
 	bool run = true;
 	while(run) {
 		SDL_Event event;
 		while(SDL_PollEvent(&event)) {
-			run = !(event.type == SDL_QUIT);
+			if(event.type == SDL_KEYDOWN) {
+				switch(event.key.keysym.sym) {
+					case SDLK_ESCAPE:
+						run = false;
+						break;
+				}
+			} else {
+				run = !(event.type == SDL_QUIT);
+			}
+
 		}
 	}
+	std::cout << "done!\n";
 }
 
 int main(int argc, char* argv[]) {
