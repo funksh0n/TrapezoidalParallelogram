@@ -1,6 +1,7 @@
 #include "Trapezoid.h"
 
 Trapezoid::Trapezoid() {
+	std::cout << "Trapezoid constructor... ";
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cout << "Failed to init SDL\n";
 		return;
@@ -17,10 +18,15 @@ Trapezoid::Trapezoid() {
 	context = SDL_GL_CreateContext(window);
 	SDL_GL_SetSwapInterval(1);
 
-	std::cout << "Trapezoid constructed\n";
+	std::cout << "done!\n";
 }
 
 void Trapezoid::CleanUp() {
+	std::cout << "Trapezoid::CleanUp()... ";
+	SDL_GL_DeleteContext(context);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+	std::cout << "done!\n";
 }
 
 void Trapezoid::Run() {
@@ -28,5 +34,6 @@ void Trapezoid::Run() {
 
 int main(int argc, char* argv[]) {
 	Trapezoid trap;
+	trap.CleanUp();
 }
 
