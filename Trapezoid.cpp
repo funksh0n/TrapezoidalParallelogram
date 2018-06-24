@@ -38,11 +38,18 @@ void Trapezoid::CleanUp() {
 }
 
 void Trapezoid::Run() {
+	bool run = true;
+	while(run) {
+		SDL_Event event;
+		while(SDL_PollEvent(&event)) {
+			run = !(event.type == SDL_QUIT);
+		}
+	}
 }
 
 int main(int argc, char* argv[]) {
 	Trapezoid trap;
-	while(true) {}
+	trap.Run();
 	trap.CleanUp();
 }
 
