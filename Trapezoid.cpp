@@ -16,7 +16,15 @@ Trapezoid::Trapezoid() {
 	}
 
 	context = SDL_GL_CreateContext(window);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetSwapInterval(1);
+	
+	glClearColor(0.0, 1.0, 0.0, 1.0);
+	glClear(GL_COLOR_BUFFER_BIT);
+	SDL_GL_SwapWindow(window);
 
 	std::cout << "done!\n";
 }
@@ -34,6 +42,7 @@ void Trapezoid::Run() {
 
 int main(int argc, char* argv[]) {
 	Trapezoid trap;
+	while(true) {}
 	trap.CleanUp();
 }
 
