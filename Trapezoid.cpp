@@ -1,7 +1,8 @@
 #include "Trapezoid.h"
 
 Trapezoid::Trapezoid() {
-	std::cout << "Trapezoid constructor... ";
+	//std::cout << "Trapezoid constructor... ";
+	Debug::Log();
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cout << "Failed to init SDL\n";
 		return;
